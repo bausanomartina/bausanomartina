@@ -52,14 +52,33 @@
 			$text = "Benvenuto sulla pagina del bot dell'8 marzo";
 			$parameters = array('chat_id' => $chatId, "text"=> $text);
 		}
-	if($text == "foto"){
-		$foto[0]="foto.jpg";
-		$foto[1]=foto1.jpg"; 
-		semdFoto($chatId, "foto.ipg", false, "la mia foto", $api);
-	}
-if($text == 'barz || $text=='/barz'){
-$barze[0] = "che cos'è una zebra? un cavallo evaso dal carcere"; 
-$barze[1] =  "colmo truffatore? fare un buco nell'acqua" 
+		if($text == "foto"){
+			$foto[0]="foto.jpg";
+			$foto[1]=foto1.jpg"; 
+			$foto[2]="foto2.jpg";
+			$i= rand(0,2); 
+			semdFoto($chatId, "foto.ipg", false, "la mia foto", $api);
+		}
+
+		if($text == 'barz || $text=='/barz'){
+			$barz[0] = "che cos'è una zebra? un cavallo evaso dal carcere"; 
+			$barz[1] =  "colmo truffatore? fare un buco nell'acqua";
+			$barz[2] = "chi la fa la vende, chi la compra non la USA, chi la usa non la vede, cos'è???? La tomba.";
+			$barz[3] = "qual è il colmpo per un giardiniere? pianta la fidantazata.";
+
+			$i = rand(0,3);
+
+			$paramenters = array('chat_id' => $chatId, "text" => $barz[$i]);
+			}
+			
+	if($text =="audio"){
+		sendAudio($chatId, "audio.mp3", false, "file audio" $api);
+		}
+		
+	if($text =="pdf"){
+		 sendDocument( $chatId, "test.pdf", false, "un testo in pdf", $api);
+		 }
+			
 
 		
 		
